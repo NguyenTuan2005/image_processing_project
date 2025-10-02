@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo ảnh AI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            text-align: center;
+        }
+        textarea {
+            width: 100%;
+            height: 80px;
+            padding: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            cursor: pointer;
+         }
+        img {
+            margin-top: 20px;
+            max-width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>AI Image Generator (Stable Diffusion)</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <textarea name="prompt" placeholder="Nhập mô tả ảnh bằng tiếng Anh hoặc tiếng Việt...">{{ prompt }}</textarea><br>
+        <button type="submit">Tạo ảnh</button>
+    </form>
+
+    {% if generated_image %}
+        <h3>Kết quả:</h3>
+        <img src="{{ generated_image }}" alt="AI Generated Image">
+    {% endif %}
+</div>
+</body>
+</html>
