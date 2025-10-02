@@ -1,0 +1,1 @@
+from .helloUrl import urlpatterns
