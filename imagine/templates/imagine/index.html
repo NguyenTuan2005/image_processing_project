@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Meme Generator 😆</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <div class="container">
+    <h2>😂 Meme Generator</h2>
+
+    <form id="memeForm" enctype="multipart/form-data">
+      <input type="file" name="image" id="image" accept="image/*" required><br><br>
+      <input type="text" name="top_text" placeholder="Top text"><br><br>
+      <input type="text" name="bottom_text" placeholder="Bottom text"><br><br>
+      <button type="submit">Generate Meme</button>
+    </form>
+
+    <div>
+      <img id="result" style="margin-top:20px; max-width:100%; border-radius:10px;">
+    </div>
+  </div>
+
+  <script>
+  document.getElementById("memeForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+
+    const res = await fetch("/api/meme/", {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await res.json();
+    document.getElementById("result").src = "data:image/png;base64," + data.image_base64;
+  });
+  </script>
+</body>
+</html>
