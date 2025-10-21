@@ -1,1 +1,1 @@
-from . import helloView
+from . import helloView, imageView
