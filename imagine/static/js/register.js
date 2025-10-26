@@ -16,7 +16,7 @@ document
             e.stopPropagation();
           } else {
             e.preventDefault();
-            alert("✅ Đăng ký thành công!");
+            alert(" Đăng ký thành công!");
             form.reset();
           }
 
