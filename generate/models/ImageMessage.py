@@ -21,13 +21,15 @@ class ImageMessage:
         self.__created_at = created_at
         self.__version = version
         self.__image: Optional[Image] = None
-        self.__ai_model: Optional[AIModel] = None
+        self.__ai_model: Optional[AIModel] = AIModel.get_instance()
 
-    def submit_request(self, prompt: Prompt) -> Optional['ImageMessage']:
+    def submit(self, prompt: Prompt) -> Optional['ImageMessage']:
         self.__prompt = prompt
         self.__status = "pending"
+        image_bytes = self.__ai_model.create_image(prompt.get_prompt_text())
+        return image_bytes #Convert soon
 
-    def cancel_request(self) -> None:
+    def cancel(self) -> None:
         self.__status = "cancelled"
 
     def check_status(self) -> str:
