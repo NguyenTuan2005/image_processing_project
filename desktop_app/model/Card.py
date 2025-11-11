@@ -21,6 +21,9 @@ class Card:
             raise ValueError("Trạng thái không hợp lệ")
         self._status = value
 
+    def __repr__(self):
+        return "id: " + str(self._card_id) + " , time entry: " + str(self._time_entry) + " , time exit: " + str(self._time_exit) + " , status: " + str(self._status)
+
     def calculate_fee(self):
         pass
 

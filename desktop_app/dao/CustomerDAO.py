@@ -1,5 +1,5 @@
-from db.database import Database
-from model.Customer import Customer
+from desktop_app.db.database import Database
+from desktop_app.model.Customer import Customer
 
 class CustomerDAO:
     def __init__(self):
