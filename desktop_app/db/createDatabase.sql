@@ -113,3 +113,5 @@ GO
 
 ALTER TABLE [payments] ADD FOREIGN KEY ([card_id]) REFERENCES [cards] ([card_id])
 GO
+
+
