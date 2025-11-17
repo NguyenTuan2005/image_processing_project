@@ -1,4 +1,4 @@
-from desktop_app.model.User import User
+from model.User import User
 
 class Staff(User):
     def __init__(self, user_id: str, fullname: str, phone_number: str, password: str, role: int):

@@ -1,5 +1,5 @@
-from desktop_app.model.User import User
-from desktop_app.model.Vehicle import Vehicle
+from model.User import User
+from model.Vehicle import Vehicle
 
 class Customer(User):
     def __init__(self, user_id: str, fullname: str, phone_number: str, email: str, vehicle: Vehicle = None):

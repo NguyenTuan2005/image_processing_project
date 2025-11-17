@@ -1,6 +1,6 @@
-from datetime import datetime, date
+from datetime import datetime
 
-from desktop_app.model.Card import Card
+from model.Card import Card
 
 class SingleCard(Card):
     def __init__(self, card_id: str, time_entry: datetime, plate_number: str):

@@ -1,7 +1,7 @@
 from datetime import datetime, date
 
-from desktop_app.model.Card import Card
-from desktop_app.model.Customer import Customer
+from model.Card import Card
+from model.Customer import Customer
 
 
 class MonthlyCard(Card):

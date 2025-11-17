@@ -1,15 +1,16 @@
 from typing import Set
 
-from desktop_app.model.Card import Card
-from desktop_app.model.Payment import Payment
-from desktop_app.model.User import User
-from desktop_app.model.Vehicle import Vehicle
+from dao.CardDAO import CardDAO
+from model.Card import Card
+from model.Payment import Payment
+from model.User import User
+from model.Vehicle import Vehicle
 
 
 class Application:
     def __init__(self):
         self._users: Set[User] = set()
-        self._cards: Set[Card] = set()
+        self._cards: Set[Card] = CardDAO().get_all()
         self._vehicles: Set[Vehicle] = set()
         self._payments: Set[Payment] = set()
 
