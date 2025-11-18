@@ -3,16 +3,28 @@ from model.Customer import Customer
 
 class CustomerDAO:
     def __init__(self):
-        self.db = Database()
+        self.__db = Database()
 
     def get_all_customers(self):
-        conn = self.db.connect()
+        conn = self.__db.connect()
         cursor = conn.cursor()
         cursor.execute("SELECT id, name, email FROM Customers")
         rows = cursor.fetchall()
    
 
         customers = [Customer(row.id, row.fullname, row.phoneNumber, row.email) for row in rows]
+
+    def get_by_id(self, id: int) -> Customer or None:
+        conn = self.__db.connect()
+        cursor = conn.cursor()
+        cursor.execute(f'SELECT * FROM customers WHERE id = {id}')
+        customer = cursor.fetchone()
+        if customer:
+            return Customer(customer.id,
+                            customer.full_name,
+                            customer.phone_number,
+                            customer.email)
+        return None
 
         # customers = []
         # for row in cursor.fetchall():
@@ -29,7 +41,7 @@ class CustomerDAO:
     #     return None
 
     def update(self, customer):
-       conn = self.db.connect()
+       conn = self.__db.connect()
        cursor = conn.cursor()
        cursor.execute(
            "UPDATE Customers SET fullname = ?, phone_number = ?, email = ? WHERE id = ?",
@@ -41,7 +53,7 @@ class CustomerDAO:
 
 
     def add_customer(self, customer):
-        conn = self.db.connect()
+        conn = self.__db.connect()
         cursor = conn.cursor()
         cursor.execute(
             "INSERT INTO Customers (fullname, phone_number, email) VALUES (?, ?)",
@@ -52,7 +64,7 @@ class CustomerDAO:
 
 
     def delete_customer(self, customer_id):
-        conn = self.db.connect()
+        conn = self.__db.connect()
         cursor = conn.cursor()
         cursor.execute("DELETE FROM Customers WHERE id = ?", (customer_id,))
         conn.commit()

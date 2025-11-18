@@ -1,28 +1,22 @@
 from datetime import datetime
 
 class Card:
-    def __init__(self, card_id: str, time_entry: datetime, time_exit: datetime = None, status: str = "active"):
+    def __init__(self, card_id: str, time_entry: datetime, time_exit: datetime = None, fee: int = 0):
         self._card_id = card_id
         self._time_entry = time_entry
         self._time_exit = time_exit
-        self._status = status
+        self._fee = fee
 
     @property
     def card_id(self):
         return self._card_id
 
     @property
-    def status(self):
-        return self._status
-
-    @status.setter
-    def status(self, value: str):
-        if value not in ["active", "expired", "closed"]:
-            raise ValueError("Trạng thái không hợp lệ")
-        self._status = value
+    def fee(self):
+        return self._fee
 
     def __repr__(self):
-        return "id: " + str(self._card_id) + " , time entry: " + str(self._time_entry) + " , time exit: " + str(self._time_exit) + " , status: " + str(self._status)
+        return "id: " + str(self._card_id) + " , time entry: " + str(self._time_entry) + " , time exit: " + str(self._time_exit) + " , fee: " + str(self._fee)
 
     def calculate_fee(self):
         pass
