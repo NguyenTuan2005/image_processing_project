@@ -1,4 +1,4 @@
-from ui.login.login_window import LoginWindow
+from ui.login.loginWindow import LoginWindow
 
 __all__ = [
     'LoginWindow'

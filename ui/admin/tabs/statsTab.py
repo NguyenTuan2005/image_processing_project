@@ -1,8 +1,8 @@
-from PyQt5.QtWidgets import (
+from PyQt6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QLabel, QTableWidget, QTableWidgetItem,
     QTabWidget, QDateEdit, QPushButton
 )
-from PyQt5.QtCore import Qt, QDate
+from PyQt6.QtCore import Qt, QDate
 
 try:
     from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas

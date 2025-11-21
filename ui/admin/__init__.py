@@ -1,4 +1,4 @@
 """Init file cho admin package"""
-from .main_window import ParkingManagementApp
+from .mainWindow import ParkingManagementApp
 
 __all__ = ['ParkingManagementApp']

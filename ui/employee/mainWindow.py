@@ -1,9 +1,10 @@
-from PyQt5.QtWidgets import QMainWindow, QWidget, QHBoxLayout, QMenuBar, QAction
-from PyQt5.QtCore import Qt, QSize, pyqtSignal
+from PyQt6.QtWidgets import QMainWindow, QWidget, QHBoxLayout, QMenuBar
+from PyQt6.QtCore import Qt, QSize, pyqtSignal
+from PyQt6.QtGui import QAction
 
-from ui.employee.left_panel import LeftPanel
-from ui.employee.center_panel import CenterPanel
-from ui.employee.right_panel import RightPanel
+from ui.employee.leftPanel import LeftPanel
+from ui.employee.centerPanel import CenterPanel
+from ui.employee.rightPanel import RightPanel
 from ui.styles import getGlobalStyle
 from ui.common import LogoutHandler
 

@@ -1,23 +1,6 @@
-"""
-Unified CSS Styles cho toàn bộ ứng dụng.
-Dùng chung cho cả Admin và Employee.
-
-Color Scheme:
-- Primary: #2c3e50 (Dark Blue)
-- Accent: #3498db (Light Blue)
-- Warning: #f39c12 (Orange)
-- Danger: #e74c3c (Red)
-- Success: #27ae60 (Green)
-- Text: #ecf0f1 (Light Gray)
-"""
-
-
 def getGlobalStyle():
     """
-    Trả về CSS stylesheet cho toàn bộ ứng dụng.
-    
-    Returns:
-        str: CSS string
+    Trả về CSS stylesheet đã điều chỉnh cho PyQt6.
     """
     return """
         /* === MAIN WINDOW === */
@@ -28,51 +11,51 @@ def getGlobalStyle():
         /* === DEFAULT TEXT === */
         QLabel {
             color: #ecf0f1;
-            font-size: 14px;
+            font-size: 12px; /* Giảm từ 14px */
         }
         
         /* === FRAMES === */
         QFrame#StatusFrame, QFrame#FeeFrame, QFrame#CardInfoFrame {
-            border-radius: 8px;
-            padding: 10px;
-            margin-bottom: 10px;
+            border-radius: 6px; /* Giảm từ 8px */
+            padding: 8px;      /* Giảm từ 10px */
+            margin-bottom: 8px; /* Giảm từ 10px */
             border: 1px solid #34495e;
         }
         
         QFrame#VideoFrame {
             border: 2px solid #3498db;
-            border-radius: 5px;
+            border-radius: 4px; /* Giảm từ 5px */
             background-color: #000000;
         }
         
         /* === TITLE LABELS === */
         QLabel#TitleLabel {
-            font-size: 18px;
+            font-size: 16px; /* Giảm từ 18px */
             font-weight: bold;
             color: #f39c12;
-            border-bottom: 2px solid #f39c12;
-            padding-bottom: 5px;
-            margin-bottom: 10px;
+            border-bottom: 1px solid #f39c12; /* Giảm từ 2px */
+            padding-bottom: 3px; /* Giảm từ 5px */
+            margin-bottom: 8px; /* Giảm từ 10px */
         }
         
         /* === SPECIAL LABELS === */
         QLabel#ParkingLogo {
-            font-size: 24px;
+            font-size: 20px; /* Giảm từ 24px */
             font-weight: bold;
             color: #3498db;
         }
         
         QLabel#BigNumber {
-            font-size: 36px;
+            font-size: 30px; /* Giảm từ 36px */
             font-weight: bold;
             color: #e74c3c;
         }
         
         /* === INPUT FIELDS === */
         QLineEdit {
-            padding: 5px;
+            padding: 4px; /* Giảm từ 5px */
             border: 1px solid #3498db;
-            border-radius: 4px;
+            border-radius: 3px; /* Giảm từ 4px */
             background-color: #34495e;
             color: #ecf0f1;
         }
@@ -86,8 +69,8 @@ def getGlobalStyle():
         QPushButton {
             background-color: #3498db;
             color: white;
-            border-radius: 4px;
-            padding: 5px 10px;
+            border-radius: 3px; /* Giảm từ 4px */
+            padding: 4px 8px; /* Giảm từ 5px 10px */
             font-weight: bold;
             border: none;
         }
@@ -106,10 +89,11 @@ def getGlobalStyle():
             color: #ecf0f1;
             border: 1px solid #2c3e50;
             gridline-color: #2c3e50;
+            font-size: 12px; /* Đồng bộ với QLabel */
         }
         
         QTableWidget::item {
-            padding: 4px;
+            padding: 3px; /* Giảm từ 4px */
             border: none;
         }
         
@@ -120,9 +104,10 @@ def getGlobalStyle():
         QHeaderView::section {
             background-color: #2c3e50;
             color: #f39c12;
-            padding: 4px;
+            padding: 3px; /* Giảm từ 4px */
             border: 1px solid #34495e;
             font-weight: bold;
+            font-size: 12px; /* Giảm nhẹ */
         }
         
         /* === MENUS === */
@@ -140,6 +125,7 @@ def getGlobalStyle():
             background-color: #34495e;
             color: #ecf0f1;
             border: 1px solid #2c3e50;
+            font-size: 12px;
         }
         
         QMenu::item:selected {
@@ -154,8 +140,9 @@ def getGlobalStyle():
         QTabBar::tab {
             background-color: #34495e;
             color: #ecf0f1;
-            padding: 5px 15px;
+            padding: 4px 12px; /* Giảm từ 5px 15px */
             border: 1px solid #2c3e50;
+            font-size: 12px;
         }
         
         QTabBar::tab:selected {

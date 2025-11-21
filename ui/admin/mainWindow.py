@@ -1,10 +1,11 @@
-from PyQt5.QtWidgets import QMainWindow, QWidget, QVBoxLayout, QTabWidget, QMenuBar, QAction
-from PyQt5.QtCore import pyqtSignal
+from PyQt6.QtWidgets import QMainWindow, QWidget, QVBoxLayout, QTabWidget, QMenuBar
+from PyQt6.QtCore import pyqtSignal
+from PyQt6.QtGui import QAction
 
-from ui.admin.tabs.cards_tab import CardTab
-from ui.admin.tabs.customers_tab import CustomerTab
-from ui.admin.tabs.vehicles_tab import VehicleTab
-from ui.admin.tabs.stats_tab import StatsTab
+from ui.admin.tabs.cardsTab import CardTab
+from ui.admin.tabs.customersTab import CustomerTab
+from ui.admin.tabs.vehiclesTab import VehicleTab
+from ui.admin.tabs.statsTab import StatsTab
 from ui.common import LogoutHandler
 
 

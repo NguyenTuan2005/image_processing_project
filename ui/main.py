@@ -4,7 +4,7 @@ Handles login and role-based routing to admin or employee interface
 """
 
 import sys
-from PyQt5.QtWidgets import QApplication, QMessageBox
+from PyQt6.QtWidgets import QApplication, QMessageBox
 
 from ui.login import LoginWindow
 from ui.admin import ParkingManagementApp
@@ -18,7 +18,7 @@ def main():
     while True:
         # Show login window
         login_window = LoginWindow()
-        login_window.exec_()
+        login_window.exec()
 
         # Check if login was successful
         if not login_window.accept_login:
@@ -33,7 +33,7 @@ def main():
             admin_window.logout_signal.connect(lambda: None)
 
             admin_window.show()
-            app.exec_()
+            app.exec()
 
             # Nếu admin đăng xuất, vòng lặp tiếp tục để hiển thị login lại
 
@@ -45,7 +45,7 @@ def main():
             employee_window.logout_signal.connect(lambda: None)
 
             employee_window.show()
-            app.exec_()
+            app.exec()
 
             # Nếu employee đăng xuất, vòng lặp tiếp tục để hiển thị login lại
         else:

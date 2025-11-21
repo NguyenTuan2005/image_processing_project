@@ -1,5 +1,5 @@
-from PyQt5.QtWidgets import QWidget, QVBoxLayout, QTabWidget
-from ui.admin.tabs.cards_sub import CardSubTabLuot, CardSubTabThang
+from PyQt6.QtWidgets import QWidget, QVBoxLayout, QTabWidget
+from ui.admin.tabs.cardsSub import CardSubTabLuot, CardSubTabThang
 
 
 class CardTab(QWidget):

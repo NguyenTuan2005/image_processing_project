@@ -1,7 +1,7 @@
-from .left_panel import LeftPanel
-from .center_panel import CenterPanel
-from .right_panel import RightPanel
-from .main_window import EmployeeMainWindow
+from .leftPanel import LeftPanel
+from .centerPanel import CenterPanel
+from .rightPanel import RightPanel
+from .mainWindow import EmployeeMainWindow
 
 __all__ = [
     'LeftPanel',

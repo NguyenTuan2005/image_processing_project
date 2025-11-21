@@ -1,8 +1,8 @@
-from PyQt5.QtWidgets import (
+from PyQt6.QtWidgets import (
     QWidget, QVBoxLayout, QLabel, QLineEdit, QHBoxLayout, QPushButton,
     QTableWidget, QTableWidgetItem, QHeaderView
 )
-from PyQt5.QtCore import Qt
+from PyQt6.QtCore import Qt
 
 
 class CustomerTab(QWidget):
@@ -20,7 +20,7 @@ class CustomerTab(QWidget):
         #  TIÊU ĐỀ
         # ================================
         title = QLabel("QUẢN LÝ KHÁCH HÀNG")
-        title.setAlignment(Qt.AlignCenter)
+        title.setAlignment(Qt.AlignmentFlag.AlignCenter)
         title.setStyleSheet("""
             font-size: 22px;
             font-weight: bold;
@@ -68,7 +68,7 @@ class CustomerTab(QWidget):
 
         # Căn chỉnh cột tự giãn
         header = self.table.horizontalHeader()
-        header.setSectionResizeMode(QHeaderView.Stretch)
+        header.setSectionResizeMode(QHeaderView.ResizeMode.Stretch)
 
         layout.addWidget(self.table)
 
