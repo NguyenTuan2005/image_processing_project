@@ -21,10 +21,10 @@ class CenterPanel(QWidget):
 
         # Danh sách ảnh mẫu (thay bằng ảnh của bạn)
         imagePaths = [
-            "../assets/images/xevao_1.jpg",
-            "../assets/images/xevao_1.jpg",
-            "../assets/images/xera_1.jpg",
-            "../assets/images/xera_1.jpg",
+            "../../assets/images/xevao_1.jpg",
+            "../../assets/images/xevao_1.jpg",
+            "../../assets/images/xera_1.jpg",
+            "../../assets/images/xera_1.jpg",
         ]
 
         imgIndex = 0
@@ -69,4 +69,3 @@ class CenterPanel(QWidget):
                 frameVLayout.addWidget(imgLabel)
 
                 gridLayout.addWidget(videoFrame, i, j)
-

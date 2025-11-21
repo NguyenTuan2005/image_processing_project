@@ -107,7 +107,7 @@ class RightPanel(QWidget):
 
     def _initCameras(self):
         # --- Camera vào (index 0) ---
-        self.entry_camera = cv2.VideoCapture(0)
+        self.entry_camera = cv2.VideoCapture(1)
         self.entry_timer = QTimer()
         self.entry_timer.timeout.connect(self._updateEntryFrame)
         self.entry_timer.start(30)
